@@ -44,6 +44,9 @@ Projects
 OnGoing Projects
 ----------------
 
+* [OsakaUniversityCourses]
+* [leetcode]
+* [ToyokoInn]
 * [Koikoi][]
 * [sousenkyo2015_members][]
 * [akb48sousenkyou]
@@ -51,3 +54,6 @@ OnGoing Projects
 [Koikoi]: https://github.com/mkfsn/Koikoi
 [sousenkyo2015_members]: https://github.com/mkfsn/sousenkyo2015_members
 [akb48sousenkyou]: https://github.com/mkfsn/akb48sousenkyou
+[OsakaUniversityCourses]: https://github.com/mkfsn/OsakaUniversityCourses
+[leetcode]: https://github.com/mkfsn/LeetCode
+[ToyokoInn]: https://github.com/mkfsn/ToyokoInn
