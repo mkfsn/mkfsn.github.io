@@ -49,6 +49,11 @@ module.exports = {
     ),
 
     new webpack.LoaderOptionsPlugin({
+      options: {
+        htmlLoader: {
+          minimize: false
+        }
+      },
       minimize: true,
       debug: false
     }),
