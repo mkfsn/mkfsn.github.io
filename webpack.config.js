@@ -29,6 +29,10 @@ module.exports = {
   devtool: 'source-map',
   module: {
     rules: [
+      {
+        test: /\.scss$/,
+        loader: ["style-loader", "css-loader", "sass-loader"]
+      },
       {test: /\.html$/, loader: "html-loader"},
       {
         test: /\.ts/,
