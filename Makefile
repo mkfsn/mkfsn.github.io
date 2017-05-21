@@ -2,9 +2,12 @@ SRCS := ABOUTME.md
 NODE_MODULES = node_modules
 OUTPUT := src/app/app.html
 
-.PHONY: all compile build
+.PHONY: all html angular compile build
 
-all: $(NODE_MODULES) compile build
+html:
+	pandoc $(SRCS) -f markdown -t html -s -o index.html
+
+angular: $(NODE_MODULES) compile build
 
 node_modules:
 	npm install
