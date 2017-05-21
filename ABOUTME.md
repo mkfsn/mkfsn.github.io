@@ -11,20 +11,24 @@ Skill
 * Linux System management
 * Security
 
-Programming Language
---------------------
+Programming Language/Framework
+------------------------------
 
 * C/C++
 * PHP
+    - CodeIgniter
 * Python
+    - Flask
 * Golang
 * HTML/CSS
+    - Bootstrap
 * JavaScript
+    - AngularJS, Angular
 * Ruby
 * Perl
 
-System manage
--------------
+System management
+-----------------
 
 * Linux (Gentoo, Ubuntu, CentOS)
 * Web Server (Apache, Nginx)

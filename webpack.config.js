@@ -3,7 +3,7 @@ var webpack = require("webpack"),
 
 const ccpOptions = {
   name: 'vendor',
-  filename: './vendor.bundle.js'
+  filename: './dist/vendor.bundle.js'
 };
 
 function root(__path) {
@@ -17,7 +17,7 @@ module.exports = {
   },
   output: {
     path: __dirname,
-    filename: "./[name].bundle.js"
+    filename: "./dist/[name].bundle.js"
   },
   resolve: {
     extensions: ['.ts', '.js'],
