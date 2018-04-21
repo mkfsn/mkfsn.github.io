@@ -1,0 +1,4 @@
+baseURL = "https://mkfsn.github.io/"
+languageCode = "en-us"
+title = "mkfsn.github.io"
+theme = "ananke"
