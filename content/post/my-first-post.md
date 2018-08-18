@@ -4,7 +4,6 @@ tags:
   - github
   - hugo 
 date: 2018-04-19T22:47:56+08:00
-draft: true
 ---
 
 最近將服務都移過去 linode 上面，因為受限於選擇的方案儲存空間不夠，所以把腦筋動到
@@ -25,19 +24,36 @@ brew install hugo
 
 # mkfsn.github.io
 
-因為想放到 Github pages 的 User or organization site，所以先切到對應的資料夾跟
-git branch
+因為之前已經有用過 Github pages 來當作個人網站，所以這次還是一樣用
+mkfsn.github.io 這個 repo 來當作主要的 repo。
 
-```bash
+目標是：
+
+1. 除了 public 以外的 code 會 push 到 hugo branch
+2. public 裡面的內容會 push 到 master branch
+
+
+## hugo branch
+
+所以先開一個 branch 叫做 hugo:
+
+{{< codeblock lang="bash" >}}
 cd /path/to/github.com/mkfsn/mkfsn.github.io
-git checkout -b hugo
-```
+git checkout --orphan -b hugo
+{{</ codeblock >}}
+
+在 hugo branch 我們要忽略 pulbic 這個資料夾的所有東西
+
+{{< codeblock lang="bash" >}}
+echo "public" >> .gitignore
+{{</ codeblock >}}
+
 
 接著用 hugo 來幫我初始化整個 site
 
-```bash
+{{< codeblock lang="bash" >}}
 hugo new site ./
-```
+{{</ codeblock >}}
 
 然後就會報錯：說資料夾不是空的 ... 
 
@@ -48,6 +64,20 @@ hugo new site hugo
 mv hugo/* ./
 rmdir hugo
 ```
+
+建立好以後，就是要想辦法把要 publish 出去的 public 推到 master 了。
+
+## master branch
+
+hugo 官方推薦使用 worktree (https://gohugo.io/hosting-and-deployment/hosting-on-github/#build-and-deployment):
+
+{{< codeblock lang="bash" >}}
+rm -rf public
+git worktree add -B master public upstream/master
+{{</ codeblock >}}
+
+至於要怎麼 publish，會在最底下介紹。
+
 
 # theme
 
@@ -87,12 +117,22 @@ hugo server -D
 到這一步已經完成一大半了，剩下把靜態頁面推到 github 就完成了。
 
 
-{{< codeblock lang="go" >}}
-package main
+# publish
 
-import "fmt"
+hugo branch 的管理我就不多加描述，因為重點是要怎麼 publish 我的文章到
+mkfsn.github.io。
 
-func main() {
-    fmt.Println("Hello world")
-}
-{{< /codeblock >}}
+
+其實還滿簡單的，就是把 public 資料夾一股腦兒的推到 master 就對了，所以可以利用以
+下這個 script 來做到：
+
+{{< codeblock lang="bash" title="deploy.sh" >}}
+#!/bin/bash
+
+hugo
+cd public && git add --all && git commit -m "rebuilding site `date`" && cd ..
+git push origin master
+{{</ codeblock >}}
+
+打完收工。
+
