@@ -299,9 +299,11 @@ mkfsn.github.io 這個 repo 來當作主要的 repo。</p>
 <p>目標是：</p>
 
 <ol>
-<li>除了 public 以外的 code 會 push 到 hugo</li>
-<li>public 裡面的內容會 push 到 gh-pages</li>
+<li>除了 public 以外的 code 會 push 到 hugo branch</li>
+<li>public 裡面的內容會 push 到 master branch</li>
 </ol>
+
+<h2 id="hugo-branch">hugo branch</h2>
 
 <p>所以先開一個 branch 叫做 hugo:</p>
 
@@ -325,6 +327,33 @@ mkfsn.github.io 這個 repo 來當作主要的 repo。</p>
         <td class="code">
           <pre class="code-highlight language-bash"><code class="bash">cd /path/to/github.com/mkfsn/mkfsn.github.io
 git checkout --orphan -b hugo</code></pre>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</figure>
+
+<p>在 hugo branch 我們要忽略 pulbic 這個資料夾的所有東西</p>
+
+
+  
+  
+  
+  
+
+
+<figure class="highlight bash language-bash">
+  <figcaption>
+    
+  </figcaption>
+  <table>
+    <tbody>
+      <tr>
+        <td class="gutter">
+          <pre><span class="line">1</span><br></pre>
+        </td>
+        <td class="code">
+          <pre class="code-highlight language-bash"><code class="bash">echo &#34;public&#34; &gt;&gt; .gitignore</code></pre>
         </td>
       </tr>
     </tbody>
@@ -366,6 +395,40 @@ git checkout --orphan -b hugo</code></pre>
 mv hugo/* ./
 rmdir hugo
 </code></pre>
+
+<p>建立好以後，就是要想辦法把要 publish 出去的 public 推到 master 了。</p>
+
+<h2 id="master-branch">master branch</h2>
+
+<p>hugo 官方推薦使用 worktree (<a href="https://gohugo.io/hosting-and-deployment/hosting-on-github/#build-and-deployment):">https://gohugo.io/hosting-and-deployment/hosting-on-github/#build-and-deployment):</a></p>
+
+
+  
+  
+  
+  
+
+
+<figure class="highlight bash language-bash">
+  <figcaption>
+    
+  </figcaption>
+  <table>
+    <tbody>
+      <tr>
+        <td class="gutter">
+          <pre><span class="line">1</span><br><span class="line">2</span><br></pre>
+        </td>
+        <td class="code">
+          <pre class="code-highlight language-bash"><code class="bash">rm -rf public
+git worktree add -B master public upstream/master</code></pre>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</figure>
+
+<p>至於要怎麼 publish，會在最底下介紹。</p>
 
 <h1 id="theme">theme</h1>
 
@@ -486,6 +549,14 @@ vim config.toml</code></pre>
 
 <p>到這一步已經完成一大半了，剩下把靜態頁面推到 github 就完成了。</p>
 
+<h1 id="publish">publish</h1>
+
+<p>hugo branch 的管理我就不多加描述，因為重點是要怎麼 publish 我的文章到
+mkfsn.github.io。</p>
+
+<p>其實還滿簡單的，就是把 public 資料夾一股腦兒的推到 master 就對了，所以可以利用以
+下這個 script 來做到：</p>
+
 
   
   
@@ -493,29 +564,31 @@ vim config.toml</code></pre>
   
 
 
-<figure class="highlight go language-go">
+<figure class="highlight bash language-bash">
   <figcaption>
+    
+      <span>deploy.sh</span>
     
   </figcaption>
   <table>
     <tbody>
       <tr>
         <td class="gutter">
-          <pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre>
+          <pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre>
         </td>
         <td class="code">
-          <pre class="code-highlight language-go"><code class="go">package main
+          <pre class="code-highlight language-bash"><code class="bash">#!/bin/bash
 
-import &#34;fmt&#34;
-
-func main() {
-    fmt.Println(&#34;Hello world&#34;)
-}</code></pre>
+hugo
+cd public &amp;&amp; git add --all &amp;&amp; git commit -m &#34;rebuilding site `date`&#34; &amp;&amp; cd ..
+git push origin master</code></pre>
         </td>
       </tr>
     </tbody>
   </table>
 </figure>
+
+<p>打完收工。</p>
               
             </div>
           </div>
