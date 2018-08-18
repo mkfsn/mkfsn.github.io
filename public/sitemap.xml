@@ -3,29 +3,53 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://mkfsn.github.io/posts/my-first-post/</loc>
-    <lastmod>2018-04-19T22:47:56+08:00</lastmod>
+    <loc>https://mkfsn.github.com/2018/08/tranquilpeak-%E4%B8%BB%E9%A1%8C%E4%B8%AD-golang-%E6%B2%92%E6%9C%89-highlight/</loc>
+    <lastmod>2018-08-19T00:36:19+08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://mkfsn.github.io/categories/</loc>
+    <loc>https://mkfsn.github.com/archives/</loc>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://mkfsn.github.io/posts/</loc>
-    <lastmod>2018-04-19T22:47:56+08:00</lastmod>
+    <loc>https://mkfsn.github.com/categories/</loc>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://mkfsn.github.io/tags/</loc>
+    <loc>https://mkfsn.github.com/tags/highlight/</loc>
+    <lastmod>2018-08-19T00:36:19+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://mkfsn.github.io/</loc>
-    <lastmod>2018-04-19T22:47:56+08:00</lastmod>
+    <loc>https://mkfsn.github.com/tags/hugo/</loc>
+    <lastmod>2018-08-19T00:36:19+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://mkfsn.github.com/post/</loc>
+    <lastmod>2018-08-19T00:36:19+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://mkfsn.github.com/tags/</loc>
+    <lastmod>2018-08-19T00:36:19+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://mkfsn.github.com/tags/tranquilpeak/</loc>
+    <lastmod>2018-08-19T00:36:19+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://mkfsn.github.com/</loc>
+    <lastmod>2018-08-19T00:36:19+08:00</lastmod>
     <priority>0</priority>
   </url>
   
