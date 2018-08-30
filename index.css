@@ -2,6 +2,10 @@ html, body {
     font-family: 'Lato', sans-serif;
 }
 
+body {
+    margin: 1rem;
+}
+
 section > h1 {
     border-bottom: 1px #777777 solid;
     padding-bottom: 1rem;
