@@ -1,0 +1,55 @@
+html, body {
+    font-family: 'Lato', sans-serif;
+}
+
+section > h1 {
+    border-bottom: 1px #777777 solid;
+    padding-bottom: 1rem;
+    margin-bottom: 0;
+}
+
+.education {
+    display: grid;
+    grid-template-areas: "name   date"
+                         "degree degree";
+    margin-bottom: 1rem;
+}
+
+.education:last-of-type {
+    margin-bottom: 0;
+}
+
+.education > .degree {
+    grid-area: degree;
+    margin: 0;
+}
+
+.education > .name {
+    grid-area: name;
+    font-weight: 900;
+}
+
+.education > .date {
+    grid-area: date;
+    justify-self: right;
+}
+
+.experience {
+    display: grid;
+    grid-template-areas: "title   date"
+                         "details details";
+}
+
+.experience > .date {
+    grid-area: date;
+    justify-self: right;
+}
+
+.experience > .title {
+    grid-area: title;
+    font-weight: 900;
+}
+
+.experience > .details {
+    grid-area: details;
+}
