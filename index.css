@@ -1,14 +1,27 @@
+:root {
+    --black: #111111;
+    --gray: #777777;
+    --font-bold: 900;
+    --gap: 1rem;
+}
+
 html, body {
     font-family: 'Lato', sans-serif;
 }
 
 body {
-    margin: 1rem;
+    margin: var(--gap);
+}
+
+.sns:visited,
+.sns:hover,
+.sns:active {
+    color: var(--black);
 }
 
 section > h1 {
-    border-bottom: 1px #777777 solid;
-    padding-bottom: 1rem;
+    border-bottom: 1px var(--gray) solid;
+    padding-bottom: var(--gap);
     margin-bottom: 0;
 }
 
@@ -16,7 +29,7 @@ section > h1 {
     display: grid;
     grid-template-areas: "name   date"
                          "degree degree";
-    margin-bottom: 1rem;
+    margin-bottom: var(--gap);
 }
 
 .education:last-of-type {
@@ -30,7 +43,7 @@ section > h1 {
 
 .education > .name {
     grid-area: name;
-    font-weight: 900;
+    font-weight: var(--font-bold);
 }
 
 .education > .date {
@@ -51,7 +64,7 @@ section > h1 {
 
 .experience > .title {
     grid-area: title;
-    font-weight: 900;
+    font-weight: var(--font-bold);
 }
 
 .experience > .details {
