@@ -58,7 +58,7 @@ section > h1 {
     margin-bottom: var(--gap);
 }
 
-@media (max-width: 420px) {
+@media (max-width: 500px) {
     .education {
         grid-template-areas: "name"
                              "date"
@@ -76,7 +76,7 @@ section > h1 {
     font-weight: var(--font-bold);
 }
 
-@media (max-width: 420px) {
+@media (max-width: 500px) {
     .education > .name {
         margin-bottom: 0;
     }
@@ -87,7 +87,7 @@ section > h1 {
     justify-self: right;
 }
 
-@media (max-width: 420px) {
+@media (max-width: 500px) {
     .education > .date {
         margin: .5rem 0;
         justify-self: flex-start;
@@ -102,7 +102,7 @@ section > h1 {
     margin-bottom: var(--gap);
 }
 
-@media (max-width: 420px) {
+@media (max-width: 500px) {
     .experience {
         grid-template-areas: "title"
                              "date"
@@ -115,7 +115,7 @@ section > h1 {
     justify-self: right;
 }
 
-@media (max-width: 420px) {
+@media (max-width: 500px) {
     .experience > .date {
         margin: .5rem 0;
         justify-self: flex-start;
@@ -128,7 +128,7 @@ section > h1 {
     font-weight: var(--font-bold);
 }
 
-@media (max-width: 420px) {
+@media (max-width: 500px) {
     .experience > .title {
         margin-bottom: 0;
     }
@@ -138,6 +138,52 @@ section > h1 {
     grid-area: details;
     margin: 0;
     padding-left: calc(var(--gap) * 1.5);
+}
+
+.project {
+    display: grid;
+    grid-template-areas: "title   type"
+                         "details details";
+    margin-bottom: var(--gap);
+}
+
+@media (max-width: 500px) {
+    .project {
+        grid-template-areas: "title"
+                             "type"
+                             "details";
+    }
+}
+
+.project > .type {
+    grid-area: type;
+    justify-self: right;
+}
+
+@media (max-width: 500px) {
+    .project > .type {
+        margin: .5rem 0;
+        justify-self: flex-start;
+        color: var(--dark-gray);
+    }
+}
+
+.project > .title {
+    font-weight: var(--font-bold);
+    grid-area: title;
+}
+
+@media (max-width: 500px) {
+    .project > .title {
+        margin-bottom: 0;
+    }
+}
+
+.project > .details {
+    grid-area: details;
+    margin: 0;
+    padding-left: calc(var(--gap) * 1.5);
+    word-break: break-all;
 }
 
 #skills > ul {
