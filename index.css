@@ -37,11 +37,12 @@ section {
 .sns:visited,
 .sns:hover,
 .sns:active {
-    color: var(--black);
+    color: var(--black) !important;
 }
 
 .sns > ion-icon {
     font-size: var(--icon-size);
+    color: var(--black) !important;
     margin: 0 .1rem;
 }
 
