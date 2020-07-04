@@ -31,6 +31,16 @@
     font-size: 1.3rem;
 }
 
+.card-header .link {
+    margin-right: .5rem;
+}
+
+.card-header svg {
+    /*font-size: 2em;*/
+    color: black !important;
+    margin: 0 .1rem;
+}
+
 .card-body {
     padding: 1em 4em;
 }
